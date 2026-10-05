@@ -31,10 +31,9 @@ section{padding:90px 0}.w{max-width:1120px;margin:0 auto;padding:0 22px}.narrow{
 .stack{display:flex}.stack span{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:700 .85rem Inter;color:#fff;border:3px solid var(--bg);margin-left:-10px}
 .stack span:first-child{margin-left:0}
 .proof b{display:block;font-size:.95rem}.proof small{color:var(--mut)}
-/* collage */
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.collage div{border-radius:26px;overflow:hidden;aspect-ratio:1}.collage div:nth-child(2){margin-top:34px}.collage div:nth-child(3){margin-top:-34px}
-.collage img{width:100%;height:100%;object-fit:cover}
+/* hero image */
+.hero-shot{border-radius:32px;overflow:hidden;background:var(--bg2);box-shadow:0 30px 60px -24px rgba(32,38,31,.35)}
+.hero-shot img{width:100%;height:auto;display:block}
 /* icon strip */
 .strip{background:var(--bg2);border-radius:var(--r);margin:0 auto 70px;max-width:1120px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;padding:30px}
 .strip .it{display:flex;align-items:center;gap:12px}
@@ -87,5 +86,5 @@ details{background:var(--card);border-radius:20px;padding:20px 24px;margin-botto
 .cta{background:var(--p);color:#fff;text-align:center;border-radius:48px;padding:80px 22px}.cta h2{font-size:clamp(2.2rem,6vw,4.4rem);margin-bottom:12px}.cta p{opacity:.85}.cta .btn{background:#fff;color:var(--p2);margin-top:4px}
 form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}input{padding:12px 20px;border-radius:99px;border:0;font:1rem Inter;min-width:260px;background:#fff;color:#111}
 .foot{padding:40px 0;color:var(--mut);font-size:.9rem;text-align:center}
-@media(max-width:860px){.two,.feat,.cards,.posts,.collage{grid-template-columns:1fr}.nav nav{display:none}.nav .btn{margin-left:auto}section{padding:60px 0}.feat,.pcard{position:static}.hc figcaption{transform:none}.cards .hc{aspect-ratio:4/3}.collage div:nth-child(2),.collage div:nth-child(3){margin:0}}
+@media(max-width:860px){.two,.feat,.cards,.posts{grid-template-columns:1fr}.nav nav{display:none}.nav .btn{margin-left:auto}section{padding:60px 0}.feat,.pcard{position:static}.hc figcaption{transform:none}.cards .hc{aspect-ratio:4/3}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.pin{height:auto}.st{position:static;height:auto;padding:60px 0}.st p{opacity:1}.pinword{letter-spacing:0}}
