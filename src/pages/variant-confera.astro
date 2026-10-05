@@ -1,0 +1,110 @@
+---
+// Design exploration only — lives on branch design/confera-layout, not linked from main nav.
+import Quiz from '../components/Quiz.astro';
+import '../styles/confera.css';
+import { U, LINKS, nav, problems, features, how, screens, faqs, price, posts, subjects } from '../data';
+const ticket = features[0];
+const rest = features.slice(1);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Applatch Kids — layout exploration</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="cf">
+
+  <header class="cf-nav"><div class="w">
+    <b>Applatch Kids</b>
+    <nav>{nav.filter((n) => n.href.startsWith('http')).map((n) => <a href={n.href}>{n.label}</a>)}</nav>
+    <a class="cf-btn" href={LINKS.visit}>Get Applatch Kids</a>
+  </div></header>
+
+  <section class="cf-hero"><div class="w">
+    <div>
+      <span class="cf-chip">Play this short quiz</span>
+      <h1>Quiz score<br /><span class="band">unlocks entertainment apps!</span></h1>
+      <p>Children love rewards! They gain access to locked apps for a set time when they pass their quizzes.</p>
+      <a class="cf-btn" href={LINKS.visit}>Get Applatch Kids</a>
+    </div>
+    <div class="cf-shot"><img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" /></div>
+  </div></section>
+
+  <div class="cf-band"><p>Age appropriate quizzes following National curriculum standard; Maths, English &amp; Science.</p></div>
+
+  <section><div class="w">
+    <div class="cf-ticket">
+      <div class="tx">
+        <span class="tag">How it unlocks</span>
+        <h2>{ticket.t}</h2>
+        <p>{ticket.b}</p>
+      </div>
+      <div class="divider"></div>
+      <div class="img"><img src={U + ticket.img} alt={ticket.t} /></div>
+    </div>
+  </div></section>
+
+  <div class="cf-badges"><div class="w">
+    <a class="it" href={LINKS.ios}><img src="https://applatch.com/applatchkids/wp-content/uploads/2022/02/appstore-dark.svg" alt="App Store" /></a>
+    <a class="it" href={LINKS.android}><img src="https://applatch.com/applatchkids/wp-content/uploads/2022/02/googleplay-dark.svg" alt="Google Play" /></a>
+    {subjects.map((s) => <div class="it"><span>{s.icon}</span>{s.t}</div>)}
+  </div></div>
+
+  <section class="cf-stats"><div class="w">
+    <h2>Screen time is winning.<br />Learning is losing.</h2>
+    {problems.map((p) => (
+      <div class="cf-stat"><h3>{p.t}</h3><p>{p.b}</p><small>{p.s}</small></div>
+    ))}
+  </div></section>
+
+  <section class="cf-carousel"><div class="w">
+    <h2>How it works</h2>
+    <p>Quiz score unlocks entertainment apps and children are kept safe online.</p>
+    <div class="cf-track">
+      {how.map((h) => <figure><img src={U + h.img} alt="" width="220" /><figcaption>{h.t}</figcaption></figure>)}
+      {screens.map((s) => <figure><img src={U + s} alt="" width="220" /></figure>)}
+    </div>
+  </div></section>
+
+  <section class="cf-feats"><div class="w">
+    <h2 style="margin-bottom:24px">More inside the app</h2>
+    {rest.map((f) => (
+      <article class="feat">
+        <div>
+          <h3>{f.t}</h3><p>{f.b}</p>
+          {f.cta && <p style="margin-top:14px"><a class="cf-btn ghost" href={LINKS[f.cta[1] as keyof typeof LINKS]}>{f.cta[0]}</a></p>}
+        </div>
+        <img src={U + f.img} alt={f.t} />
+      </article>
+    ))}
+  </div></section>
+
+  <section class="cf-price"><div class="w">
+    <h2>Our pricing works for everybody</h2>
+    <div class="amt">{price.month}</div>
+    <p>per month</p>
+    <ul>{price.perks.map((p) => <li>{p}</li>)}</ul>
+    <a class="cf-btn" style="background:#fff;color:var(--cf-coral)" href={LINKS.visit}>Get Applatch Kids</a>
+  </div></section>
+
+  <section class="cf-faq"><div class="w" style="max-width:760px">
+    <h2 style="margin-bottom:24px">Any questions? Check out the FAQs</h2>
+    {faqs.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}
+  </div></section>
+
+  <section class="cf-blog"><div class="w">
+    <h2>Featured blog posts</h2>
+    <div class="grid">{posts.slice(0, 6).map((p) => <a href={p.href}><small>{p.d}</small><h3>{p.t}</h3></a>)}</div>
+  </div></section>
+
+  <footer class="cf-foot"><div class="w">
+    <div class="wordmark">APPLATCH</div>
+    <div class="links">{nav.map((n) => <a href={n.href}>{n.label}</a>)}</div>
+    <small>© Applatch. All rights reserved.</small>
+  </div></footer>
+
+</body>
+</html>

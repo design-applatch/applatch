@@ -1,0 +1,100 @@
+/* Scoped to variant-confera.astro only — does not touch global.css */
+.cf{--cf-ink:#15151C;--cf-cream:#FBF3E7;--cf-green:#16432E;--cf-coral:#FF6B4A;--cf-pink:#FFB8DA;--cf-mustard:#E8A33D;--cf-r:0px}
+.cf *{box-sizing:border-box}
+.cf{font-family:'Inter',sans-serif;color:var(--cf-ink);background:var(--cf-cream)}
+.cf h1,.cf h2,.cf .wordmark{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:-.01em;line-height:.92;font-weight:400}
+.cf .w{max-width:1120px;margin:0 auto;padding:0 22px}
+.cf section{padding:70px 0}
+.cf a{color:inherit;text-decoration:none}
+.cf img{max-width:100%;display:block}
+
+/* nav */
+.cf-nav{background:var(--cf-pink);padding:16px 0}
+.cf-nav .w{display:flex;align-items:center;gap:24px}
+.cf-nav b{font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase}
+.cf-nav nav{display:flex;gap:20px;margin-left:auto;font-weight:600;font-size:.92rem}
+.cf-btn{background:var(--cf-green);color:#fff;padding:10px 22px;border-radius:99px;font-weight:700;border:0;cursor:pointer;display:inline-block}
+.cf-btn:hover{background:var(--cf-ink)}
+.cf-btn.ghost{background:0;border:2px solid currentColor}
+
+/* hero */
+.cf-hero{background:var(--cf-green);color:#fff;position:relative;overflow:hidden;padding:60px 0}
+.cf-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:34px 34px}
+.cf-hero .w{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.cf-chip{display:inline-flex;align-items:center;gap:8px;background:var(--cf-coral);color:#fff;padding:8px 18px;border-radius:99px;font-weight:700;font-size:.8rem;text-transform:uppercase;margin-bottom:18px}
+.cf-hero h1{font-size:clamp(2.6rem,6.5vw,5rem);color:#fff}
+.cf-hero .band{display:inline-block;background:var(--cf-pink);color:var(--cf-ink);padding:6px 14px;margin-top:8px}
+.cf-hero p{margin:22px 0;max-width:420px;opacity:.9;font-size:1.05rem}
+.cf-shot{border:6px solid var(--cf-pink);border-radius:4px;overflow:hidden;transform:rotate(-2deg)}
+
+/* curriculum banner */
+.cf-band{background:var(--cf-pink);padding:16px 0;text-align:center}
+.cf-band p{font-weight:700;font-size:1.05rem}
+
+/* ticket card */
+.cf-ticket{background:var(--cf-green);color:#fff;border-radius:4px;display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;position:relative}
+.cf-ticket .tx{padding:44px}
+.cf-ticket .tx .tag{color:var(--cf-mustard);font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.08em;margin-bottom:10px;display:block}
+.cf-ticket h2{font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;margin-bottom:14px}
+.cf-ticket .divider{position:absolute;top:0;bottom:0;left:55%;border-left:3px dashed rgba(255,255,255,.4)}
+.cf-ticket .img{background:var(--cf-pink);display:grid;place-items:center;padding:24px}
+.cf-ticket .img img{border-radius:10px;max-height:320px}
+
+/* badge row (repurposed logo wall) */
+.cf-badges{background:var(--cf-cream);border-top:4px solid var(--cf-ink);border-bottom:4px solid var(--cf-ink)}
+.cf-badges .w{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;align-items:center;padding:30px 22px}
+.cf-badges .it{display:flex;align-items:center;gap:10px;font-weight:800;text-transform:uppercase;font-size:1rem}
+.cf-badges img{height:40px;width:auto}
+
+/* stat cards */
+.cf-stats h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:30px}
+.cf-stat{background:#fff;border:3px solid var(--cf-ink);border-radius:4px;padding:26px 30px;margin-bottom:18px}
+.cf-stat h3{font-size:1.3rem;margin-bottom:6px;font-weight:800}
+.cf-stat small{display:block;margin-top:10px;opacity:.6}
+
+/* carousel section (repurposed "previously on") */
+.cf-carousel{background:var(--cf-ink);color:#fff}
+.cf-carousel h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:8px}
+.cf-carousel p{opacity:.7;margin-bottom:28px}
+.cf-track{display:flex;gap:18px;overflow-x:auto;padding-bottom:12px}
+.cf-track figure{flex:none;width:220px}
+.cf-track img{border-radius:6px;border:3px solid var(--cf-coral)}
+.cf-track figcaption{font-size:.85rem;margin-top:10px;opacity:.8}
+
+/* feature stack */
+.cf-feats .feat{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:34px;border-radius:4px;margin-bottom:22px}
+.cf-feats .feat:nth-child(odd){background:var(--cf-pink)}
+.cf-feats .feat:nth-child(even){background:var(--cf-mustard)}
+.cf-feats h3{font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:10px;font-family:'Anton',sans-serif;text-transform:uppercase}
+.cf-feats img{border-radius:6px;max-height:260px;margin:auto}
+
+/* pricing CTA banner (repurposed early-bird banner) */
+.cf-price{background:var(--cf-coral);color:#fff;text-align:center}
+.cf-price h2{color:#fff;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:10px}
+.cf-price .amt{font-family:'Anton',sans-serif;font-size:4rem}
+.cf-price ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:18px 0}
+.cf-price li{background:rgba(255,255,255,.15);padding:8px 16px;border-radius:99px;font-size:.9rem}
+
+/* faq */
+.cf-faq details{background:#fff;border:3px solid var(--cf-ink);border-radius:4px;padding:18px 22px;margin-bottom:12px}
+.cf-faq summary{font-weight:800;cursor:pointer}
+.cf-faq p{margin-top:10px;opacity:.75}
+
+/* blog */
+.cf-blog{background:var(--cf-pink)}
+.cf-blog .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.cf-blog a{background:#fff;border-radius:4px;padding:22px;display:block}
+.cf-blog small{opacity:.6}
+.cf-blog h3{font-size:1.05rem;margin-top:8px;font-weight:700}
+
+/* footer */
+.cf-foot{background:var(--cf-ink);color:#fff;padding:60px 0 30px;overflow:hidden}
+.cf-foot .wordmark{font-size:clamp(3rem,13vw,8rem);color:var(--cf-pink);white-space:nowrap}
+.cf-foot .links{display:flex;flex-wrap:wrap;gap:20px;margin:26px 0;font-weight:600}
+.cf-foot small{opacity:.5}
+
+@media(max-width:860px){
+  .cf-hero .w,.cf-ticket,.cf-feats .feat,.cf-blog .grid{grid-template-columns:1fr}
+  .cf-ticket .divider{display:none}
+  .cf-nav nav{display:none}
+}
