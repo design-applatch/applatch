@@ -1,0 +1,39 @@
+---
+---
+<div class="phone" id="quiz" aria-live="polite">
+  <div class="bar"><i id="qbar"></i></div>
+  <div id="qbody"></div>
+  <div class="apps" aria-label="Apps locked until the quiz is passed">
+    <div class="app lk" style="background:#FF6B5B">🎮</div><div class="app lk" style="background:#4FD8A4">🎵</div>
+    <div class="app lk" style="background:#6B4EFF">📺</div><div class="app lk" style="background:#FFD23F">📸</div>
+  </div>
+</div>
+<script>
+  const Q: [string, string[], number][] = [
+    ['What is 7 × 8?', ['54', '56', '64'], 1],
+    ['Which word is a noun?', ['Quickly', 'Happy', 'Table'], 2],
+    ['What do plants need to make food?', ['Sunlight', 'Plastic', 'Sand'], 0],
+  ];
+  let qi = 0, score = 0;
+  const body = document.getElementById('qbody')!, bar = document.getElementById('qbar')!;
+  const apps = [...document.querySelectorAll('.app')];
+  function render() {
+    bar.style.width = (qi / Q.length) * 100 + '%';
+    if (qi >= Q.length) {
+      const ok = score >= 2;
+      if (ok) apps.forEach((a) => a.classList.remove('lk'));
+      body.innerHTML = `<p class="q">${ok ? 'Apps unlocked for 1 hour! 🎉' : 'Almost. Try again.'}</p><p>You scored ${score}/${Q.length}.</p><button class="btn y" id="again">Play again</button>`;
+      document.getElementById('again')!.onclick = () => { qi = score = 0; apps.forEach((a) => a.classList.add('lk')); render(); };
+      return;
+    }
+    const [q, opts, c] = Q[qi];
+    body.innerHTML = `<p class="q">${q}</p><div class="opts">${opts.map((o, i) => `<button class="opt">${o}</button>`).join('')}</div>`;
+    const btns = [...body.querySelectorAll<HTMLButtonElement>('.opt')];
+    btns.forEach((b, i) => (b.onclick = () => {
+      btns.forEach((x) => (x.disabled = true));
+      b.classList.add(i === c ? 'ok' : 'no'); if (i !== c) btns[c].classList.add('ok'); else score++;
+      setTimeout(() => { qi++; render(); }, 900);
+    }));
+  }
+  render();
+</script>

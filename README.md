@@ -12,6 +12,7 @@ npm run build    # static output in dist/
 - Set `site` (and `base` if hosted in `/applatchkids`) in `astro.config.mjs`.
 
 ## To do
-- Confirm pricing (`price` in `src/data.ts` and the toggle script in `index.astro`): live site shows £399 / £3999.
+- Confirm annual price in `src/data.ts` (`price.year`) — monthly £3.99 is confirmed, annual £39.99 is assumed to match "Save 16%".
 - Newsletter form is a stub; connect it to your email provider.
 - About, Blog, Contact and blog posts still link to the WordPress site.
+- No real parent/customer photos exist yet; hero "social proof" avatars use placeholder initials (`src/data.ts` → `proof.people`) — swap in real photos when available.

@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import { U, nav, LINKS } from '../data';
+const { title = 'Applatch Kids – Quiz score unlocks entertainment apps', desc = 'Kids pass a quiz to unlock their favourite apps. Parents get weekly progress reports and online safety alerts.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title><meta name="description" content={desc} />
+  <meta property="og:title" content={title} /><meta property="og:description" content={desc} />
+  <meta property="og:image" content={U + '2026/09/Applatch-Logo-final-3n-1.png'} />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔓</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="nav"><div class="w">
+    <a href="/" aria-label="Applatch Kids"><img src={U + '2026/09/Applatch-Logo-final-3n-1.png?w=300&ssl=1'} alt="Applatch" height="36" /></a>
+    <nav>{nav.map((n) => <a href={n.href}>{n.label}</a>)}</nav>
+    <button id="theme" aria-label="Toggle dark mode">Dark</button>
+    <a class="btn" href={LINKS.visit}>Get Applatch Kids</a>
+  </div></header>
+  <main><slot /></main>
+  <footer class="foot"><div class="w">© Applatch. All rights reserved. Made with ♥ by <a href="https://applatch.com/applatchkids/">Applatch</a></div></footer>
+  <script>
+    const b = document.getElementById('theme')!;
+    b.onclick = () => { const d = document.documentElement.dataset.theme === 'dark'; document.documentElement.dataset.theme = d ? '' : 'dark'; b.textContent = d ? 'Dark' : 'Light'; };
+  </script>
+</body>
+</html>
