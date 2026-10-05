@@ -1,25 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import Quiz from '../components/Quiz.astro';
-import { U, LINKS, problems, features, how, screens, faqs, price, posts, subjects, proof } from '../data';
-const dots = ['#E2714B', '#2F6FED', '#E8A33D', '#1F5C3F'];
+import { U, LINKS, problems, features, how, screens, faqs, price, posts, subjects } from '../data';
 const YT = '1ZHp7vDr8lM';
 ---
 <Base>
   <!-- 1. Hero -->
   <section class="hero"><div class="w two">
     <div>
-      <span class="badge">Ages 6–14 \u00B7 Curriculum-aligned quizzes</span>
-      <h1 class="scatter" data-scatter>Where screen time <em class="underline">earns<svg viewBox="0 0 160 14"><path d="M2 10 C 40 2, 120 2, 158 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></em> its keep</h1>
-      <p class="lead">A quiz-first world where kids unlock their favourite entertainment apps by passing short Maths, English and Science quizzes — and parents get a weekly report on how they're doing.</p>
-      <p class="row">
-        <a class="btn" href={LINKS.visit}>Get Applatch Kids</a>
-        <a class="btn y icon" href="#features"><i>▶</i>See how it works</a>
-      </p>
-      <div class="proof">
-        <div class="stack">{proof.people.map((p, i) => <span style={`background:${dots[i % dots.length]}`}>{p}</span>)}</div>
-        <div><b>{proof.stat}</b><small>{proof.sub}</small></div>
-      </div>
+      <span class="badge">Play this short quiz</span>
+      <h1 class="scatter" data-scatter>Quiz score <em class="underline">unlocks<svg viewBox="0 0 160 14"><path d="M2 10 C 40 2, 120 2, 158 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></em> entertainment apps!</h1>
+      <p class="lead">Children love rewards! They gain access to locked apps for a set time when they pass their quizzes.</p>
+      <p class="row"><a class="btn" href={LINKS.visit}>Get Applatch Kids</a></p>
+      <p class="sub" style="margin-top:18px">Age appropriate quizzes following National curriculum standard; Maths, English &amp; Science.</p>
     </div>
     <div class="collage">
       <div style="background:#E2714B1a"><img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" loading="lazy" /></div>
@@ -31,12 +24,12 @@ const YT = '1ZHp7vDr8lM';
 
   <!-- Icon strip -->
   <div class="w"><div class="strip">
-    {subjects.map((s) => <div class="it"><i>{s.icon}</i><div><b>{s.t}</b><small>{s.s}</small></div></div>)}
+    {subjects.map((s) => <div class="it"><i>{s.icon}</i><b>{s.t}</b></div>)}
   </div></div>
 
-  <!-- Try the quiz -->
+  <!-- Try the quiz (interactive demo — supplements, doesn't replace, staging content) -->
   <section class="trydemo"><div class="w two">
-    <div><p class="tag">Play this short quiz</p><h2 class="sec" style="margin-bottom:14px">Try it yourself</h2>
+    <div><h2 class="sec" style="margin-bottom:14px">Try it yourself</h2>
     <p class="lead">Three quick questions, just like the real app. Score well and the locked apps unlock.</p></div>
     <Quiz />
   </div></section>
@@ -130,8 +123,7 @@ const YT = '1ZHp7vDr8lM';
 
   <!-- 10. Closing CTA + newsletter -->
   <section class="w"><div class="cta">
-    <h2>Let’s make screen time count</h2>
-    <p>Subscribe to stay informed about the latest updates.</p>
+    <h2>Subscribe to our newsletter to stay informed about the latest updates</h2>
     <p><a class="btn" href={LINKS.visit}>Get Applatch Kids</a></p>
     <form id="news"><input type="email" required placeholder="Your email address" aria-label="Email address" /><button class="btn">Subscribe</button></form>
   </div></section>

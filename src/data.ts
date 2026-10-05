@@ -43,16 +43,17 @@ export const faqs = [
 ];
 export const price = {
   perks: ['Monitor your child’s location', 'Add up to 4 devices', 'Lock apps and filter content', 'Premium chat and email support'],
-  // Confirmed £3.99/month. Annual figure assumed to match "Save 16%" — CONFIRM real annual price with stakeholder.
+  // Confirmed £3.99/month. Annual figure assumed to match "Save 16%" — CONFIRM real annual price.
   month: '£3.99', year: '£39.99', save: 'Save 16%',
 };
+// Wording below is lifted directly from staging's "Age appropriate quizzes
+// following National curriculum standard; Maths, English & Science." line —
+// not invented subject descriptions.
 export const subjects = [
-  { icon: '➕', t: 'Maths', s: 'Number & logic quizzes' },
-  { icon: '📖', t: 'English', s: 'Reading & comprehension' },
-  { icon: '🔬', t: 'Science', s: 'Nature & how-things-work' },
+  { icon: '➕', t: 'Maths' },
+  { icon: '📖', t: 'English' },
+  { icon: '🔬', t: 'Science' },
 ];
-// No real parent photos available yet — placeholder initials, not stock photos.
-export const proof = { people: ['M', 'A', 'S', 'J'], stat: '120,000+ families', sub: 'keeping screen time in check' };
 const P = 'https://applatch.com/applatchkids/';
 export const posts = [
   ['March 27, 2025', 'Introducing healthy tech habits early.', 'introducing-healthy-tech-habits-early/'],
