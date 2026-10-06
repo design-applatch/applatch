@@ -32,14 +32,14 @@ export const how = [
 ];
 export const screens = [1, 2, 3, 4, 5].map((n) => `2026/04/H.I.W-Screen-${n}.png?w=328&ssl=1`);
 export const faqs = [
-  ['What is Applatch Kids?', 'Applatch Kids is an educational and parental control app that helps your child learn through fun, curriculum-based quizzes while promoting healthy screen time by locking apps until quizzes are completed successfully.'],
-  ['How does learning work on Applatch Kids?', 'Children learn through fun, curriculum-based quizzes that reinforce what they’ve learned.'],
-  ['How do I sign up correctly?', 'You can sign up on either your device (parent’s device) or your child’s device using your email (parent’s email only). Then log in on the other device using the same email and password set during sign up, or simply scan the QR code to link both devices. Tip: don’t sign up with your child’s email, it may cause issues linking your family account.'],
-  ['What subjects are available?', 'Applatch Kids currently covers key subjects like Mathematics, English, and Science, with more extracurricular topics coming soon, such as PSHE and Baking.'],
-  ['What happens if my child fails a quiz?', 'If your child doesn’t reach the pass mark, they can retry. The system automatically adjusts the quiz difficulty to match their learning pace. However, to avoid frustration, Applatch Kids unlocks their apps after their second attempt on a quiz.'],
-  ['How does the Learning Buddy help?', 'Our AI-powered mascot explains tricky questions using voice and animation, guiding your child just like a friendly classroom helper.'],
-  ['Can I track my child’s learning progress?', 'Yes! You can track your child’s subject performance, progress, and achievements directly from your Parent App and weekly email updates.'],
-  ['How does screen time control work?', 'You can set daily screen time limits (e.g., 45 mins, 1 hour, 3 hours per day) on the parent’s side of the app. Once the daily limit is reached, Applatch Kids automatically locks your child’s apps for the rest of the day.'],
+  ['What is Applatch Kids', 'Applatch Kids is an educational and parental control app that helps your child learn through fun, curriculum-based quizzes while promoting healthy screen time by locking apps until quizzes are completed successfully.'],
+  ['How does learning work on Applatch Kids?', 'Children learn through fun, curriculum-based quizzes that reinforce what they\u2019ve learned.'],
+  ['How do I sign up correctly?', 'You can sign up on either your device (parent\u2019s device) or your child\u2019s device using your email (parent\u2019s email only). Then log in on the other device using the same email and password set during sign up, or simply scan the QR code to link both devices.\n\nTip: Don\u2019t sign up with your child\u2019s email, it may cause issues linking your family account.'],
+  ['What subjects are available?', 'Applatch Kids currently covers key subjects like Mathematics, English, and Science, with more extracurricular topics coming soon, such as, PSHE, Baking, etc. coming soon'],
+  ['What happens if my child fails a quiz?', 'If your child doesn\u2019t reach the pass mark, they can retry. The system automatically adjusts the quiz difficulty to match their learning pace. However, to avoid frustration, Applatch Kids unlocks their apps after their second attempt on a quiz.'],
+  ['How does the Learning Buddy help?', 'Our AI-powered mascot explains tricky questions using voice and animation, guiding your child just like a friendly classroom helper'],
+  ['Can I track my child\u2019s learning progress?', 'Yes! You can track your child\u2019s subject performance, progress, and achievements directly from your Parent App and weekly email updates.'],
+  ['How does screen time control work?', 'You can set daily screen time limits (e.g., 45 mins, 1 hour, 3 hours per day) on the parent\u2019s side of the app. Once the daily limit is reached, Applatch Kids automatically locks your child\u2019s apps for the rest of the day.'],
 ];
 export const price = {
   perks: ['Monitor your child’s location', 'Add up to 4 devices', 'Lock apps and filter content', 'Premium chat and email support'],

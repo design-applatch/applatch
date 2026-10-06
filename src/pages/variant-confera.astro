@@ -92,7 +92,12 @@ const rest = features.slice(1);
 
   <section class="cf-faq"><div class="w" style="max-width:760px">
     <h2 style="margin-bottom:24px">Any questions? Check out the FAQs</h2>
-    {faqs.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}
+    {faqs.map(([q, a], i) => (
+      <details open={i === 0}>
+        <summary>{q}</summary>
+        {a.split('\n\n').map((para) => <p>{para}</p>)}
+      </details>
+    ))}
   </div></section>
 
   <section class="cf-blog"><div class="w">
