@@ -50,13 +50,13 @@ const rest = features.slice(1);
   <div class="cf-badges"><div class="w">
     <a class="it" href={LINKS.ios}><img src="https://applatch.com/applatchkids/wp-content/uploads/2022/02/appstore-dark.svg" alt="App Store" /></a>
     <a class="it" href={LINKS.android}><img src="https://applatch.com/applatchkids/wp-content/uploads/2022/02/googleplay-dark.svg" alt="Google Play" /></a>
-    {subjects.map((s) => <div class="it"><span>{s.icon}</span>{s.t}</div>)}
+
   </div></div>
 
   <section class="cf-stats"><div class="w">
-    <h2>Screen time is winning.<br />Learning is losing.</h2>
+    <h2>Did you know</h2>
     {problems.map((p) => (
-      <div class="cf-stat"><h3>{p.t}</h3><p>{p.b}</p><small>{p.s}</small></div>
+      <div class="cf-stat"><h3>{p.t}</h3><p>{p.b}</p></div>
     ))}
   </div></section>
 
