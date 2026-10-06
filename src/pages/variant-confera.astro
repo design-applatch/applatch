@@ -25,10 +25,9 @@ const rest = features.slice(1);
 
   <section class="cf-hero"><div class="w">
     <div>
-      <span class="cf-chip">Play this short quiz</span>
       <h1>Quiz score<br /><span class="band">unlocks entertainment apps!</span></h1>
       <p>Children love rewards! They gain access to locked apps for a set time when they pass their quizzes.</p>
-      <a class="cf-btn" href={LINKS.visit}>Get Applatch Kids</a>
+      <a class="cf-btn cf-btn-hero" href={LINKS.visit}>Get Applatch Kids</a>
     </div>
     <div class="cf-shot"><img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" /></div>
   </div></section>
@@ -64,8 +63,7 @@ const rest = features.slice(1);
     <h2>How it works</h2>
     <p>Quiz score unlocks entertainment apps and children are kept safe online.</p>
     <div class="cf-track">
-      {how.map((h) => <figure><img src={U + h.img} alt="" width="220" /><figcaption>{h.t}</figcaption></figure>)}
-      {screens.map((s) => <figure><img src={U + s} alt="" width="220" /></figure>)}
+      {how.map((h) => <figure><img src={U + h.img} alt={h.t} /><figcaption>{h.t}</figcaption></figure>)}
     </div>
   </div></section>
 

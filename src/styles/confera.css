@@ -16,6 +16,9 @@
 .cf-btn{background:var(--cf-green);color:#fff;padding:10px 22px;border-radius:99px;font-weight:700;border:0;cursor:pointer;display:inline-block}
 .cf-btn:hover{background:var(--cf-ink)}
 .cf-btn.ghost{background:0;border:2px solid currentColor}
+.cf-btn.cf-btn-hero{background:var(--cf-mustard);color:var(--cf-ink)}
+.cf-btn.cf-btn-hero:hover{background:#f5c060}
+.cf-nav .cf-btn{color:#fff !important}
 
 /* hero */
 .cf-hero{background:var(--cf-green);color:#fff;position:relative;overflow:hidden;padding:60px 0}
@@ -52,14 +55,14 @@
 .cf-stat h3{font-size:1.3rem;margin-bottom:6px;font-weight:800}
 .cf-stat small{display:block;margin-top:10px;opacity:.6}
 
-/* carousel section (repurposed "previously on") */
+/* carousel section → 2×2 how-it-works grid */
 .cf-carousel{background:var(--cf-ink);color:#fff}
 .cf-carousel h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:8px}
 .cf-carousel p{opacity:.7;margin-bottom:28px}
-.cf-track{display:flex;gap:18px;overflow-x:auto;padding-bottom:12px}
-.cf-track figure{flex:none;width:220px}
-.cf-track img{border-radius:6px;border:3px solid var(--cf-coral)}
-.cf-track figcaption{font-size:.85rem;margin-top:10px;opacity:.8}
+.cf-track{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.cf-track figure{margin:0}
+.cf-track img{border-radius:6px;border:3px solid var(--cf-coral);width:100%;height:260px;object-fit:cover}
+.cf-track figcaption{font-size:.9rem;margin-top:10px;opacity:.8;font-weight:600}
 
 /* feature stack */
 .cf-feats .feat{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:34px;border-radius:4px;margin-bottom:22px}
