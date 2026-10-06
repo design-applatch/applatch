@@ -17,10 +17,7 @@ const YT = '1ZHp7vDr8lM';
     <div class="hero-shot"><img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" loading="lazy" /></div>
   </div></section>
 
-  <!-- Icon strip -->
-  <div class="w"><div class="strip">
-    {subjects.map((s) => <div class="it"><i>{s.icon}</i><b>{s.t}</b></div>)}
-  </div></div>
+
 
   <!-- Try the quiz (interactive demo — supplements, doesn't replace, staging content) -->
   <section class="trydemo"><div class="w two">
@@ -39,11 +36,11 @@ const YT = '1ZHp7vDr8lM';
 
   <!-- 3. Problems: stacked cards -->
   <section class="probs"><div class="w">
-    <h2 class="sec">Screen time is winning. Learning is losing.</h2>
+    <h2 class="sec">Did you know</h2>
     <div class="stack">
       {problems.map((p, i) => (
         <article class="pcard" style={`--i:${i}`}>
-          <h3>{p.t}</h3><p>{p.b}</p><small>{p.s}</small>
+          <h3>{p.t}</h3><p>{p.b}</p>
         </article>
       ))}
     </div>
