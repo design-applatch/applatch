@@ -105,7 +105,12 @@ const YT = '1ZHp7vDr8lM';
   <!-- 8. FAQ -->
   <section class="faq"><div class="w narrow">
     <h2 class="sec">Any questions? Check out the FAQs</h2>
-    {faqs.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p>{a}</p></details>)}
+    {faqs.map(([q, a], i) => (
+      <details open={i === 0}>
+        <summary>{q}</summary>
+        {a.split('\n\n').map((para) => <p>{para}</p>)}
+      </details>
+    ))}
     <p>Still have unanswered questions? <a href="https://applatch.com/applatchkids/contacts-us/"><b>Contact us now</b></a></p>
   </div></section>
 
