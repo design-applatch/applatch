@@ -19,10 +19,8 @@ export const problems = [
 ];
 export const features = [
   { t: 'Quizzes unlock entertainment apps', b: 'Children engage in age-appropriate quizzes with 15 questions per session in Maths, English, and Science. Achieving a minimum of 8/15 unlocks apps for 15 minutes to 1 hour. Additional access requires completing another set of 15 questions.', img: '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1', w: 1320, h: 940, stores: true },
-  { t: 'Educational performance analysis report', b: 'Receive comprehensive academic progress reports regularly to track your child’s learning journey effectively. We share the report to your email on a weekly basis, showing their performance in Mathematics, English and Science.', img: '2026/07/Group-1000003136.png?fit=1062%2C788&ssl=1', w: 1062, h: 788 },
+  { t: 'Educational performance analysis report', b: 'Receive comprehensive academic progress reports regularly to track your child\u2019s learning journey effectively. We share the report to your email on a weekly basis, showing their performance in Mathematics, English and Science.', img: '2026/07/Group-1000003136.png?fit=1062%2C788&ssl=1', w: 1062, h: 788 },
   { t: 'Unlock pops (points) per quiz', b: 'Earn pops (points) as rewards for playing quizzes, making learning both fun and rewarding.', img: '2026/07/Group-1000003136-1.png?fit=1062%2C788&ssl=1', w: 1062, h: 788 },
-  { t: 'Alert notification when children get sensitive messages', b: 'Stay informed instantly when your child receives potentially harmful or inappropriate messages online.', img: '2024/04/homepage-image-pp1.png?fit=1053%2C1568&ssl=1', w: 1053, h: 1568, cta: ['Try it now', 'ios'], tall: true },
-  { t: 'Auto block inappropriate content & websites', b: 'Automatically block access to unsuitable online content and websites, providing a safe browsing experience.', img: '2024/04/homepage-image-2.png?fit=1053%2C1568&ssl=1', w: 1053, h: 1568, cta: ['Try it now', 'androidFilter'], tall: true },
 ];
 export const how = [
   { t: 'We lock selected fun apps for Micheal', img: 'elementor/thumbs/C1-19-1-rrd2y7bg0t21sszxn6s0gtqfh1jz0mdqgrgbecmtek.png?w=980&ssl=1' },
