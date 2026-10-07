@@ -14,7 +14,6 @@ import { U, LINKS, problems, features, video, how, faqs, posts, postsMarquee } f
       <div class="tag-row"><span>#quiztime</span><span>#unlocked</span><span>#funlearning</span></div>
     </div>
     <div class="hero-shot">
-      <div class="ring"></div>
       <img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" loading="lazy" />
     </div>
   </div></section>
@@ -54,7 +53,7 @@ import { U, LINKS, problems, features, video, how, faqs, posts, postsMarquee } f
       <span class="pill">Meet Loomey</span>
       <h2>{video.title}</h2>
       <p class="lead">{video.mascot} &mdash; {video.mascotSub} &mdash; hosted by {video.channel}.</p>
-      <a class="btn ghost" href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noopener">&blacktriangleright; Watch on YouTube</a>
+
     </div>
     <div class="vid-card" id="vid" data-id={video.youtubeId}>
       <img src={U + '2026/04/Hero-section-quiz-screen.png?fit=880%2C627&ssl=1'} alt={video.mascot} loading="lazy" />
@@ -100,10 +99,8 @@ import { U, LINKS, problems, features, video, how, faqs, posts, postsMarquee } f
     </div></div>
   </div></section>
 
-  <!-- Newsletter CTA -->
   <div class="w" style="padding-bottom:90px"><div class="cta">
     <h2>Subscribe to our newsletter to stay informed about the latest updates</h2>
-    <a class="btn" href={LINKS.visit}>Get Applatch Kids &rarr;</a>
     <form id="news"><input type="email" required placeholder="Your email address" aria-label="Email address" /><button class="btn">Subscribe</button></form>
   </div></div>
 </Base>
