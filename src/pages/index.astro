@@ -1,169 +1,118 @@
 ---
 import Base from '../layouts/Base.astro';
-import Quiz from '../components/Quiz.astro';
-import { U, LINKS, problems, features, how, screens, faqs, price, posts, subjects } from '../data';
-const YT = '1ZHp7vDr8lM';
+import { U, LINKS, problems, features, video, how, faqs, posts, postsMarquee } from '../data';
 ---
 <Base>
-  <!-- 1. Hero -->
-  <section class="hero"><div class="w two">
+  <!-- Hero -->
+  <section class="hero"><div class="w">
+    <div class="blob" style="width:360px;height:360px;background:var(--yellow);top:-80px;right:10%"></div>
+    <div class="blob" style="width:220px;height:220px;background:var(--lav);bottom:-40px;left:-60px"></div>
     <div>
-      <span class="badge">Play this short quiz</span>
-      <h1 class="scatter" data-scatter>Quiz score <em class="underline">unlocks<svg viewBox="0 0 160 14"><path d="M2 10 C 40 2, 120 2, 158 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></em> entertainment apps!</h1>
+      <h1>Quiz score <em class="squig">unlocks<svg viewBox="0 0 160 14"><path d="M2 10 C 40 2, 120 2, 158 10" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/></svg></em><br/>entertainment apps!</h1>
       <p class="lead">Children love rewards! They gain access to locked apps for a set time when they pass their quizzes.</p>
-      <p class="row"><a class="btn" href={LINKS.visit}>Get Applatch Kids</a></p>
-      <p class="sub" style="margin-top:18px">Age appropriate quizzes following National curriculum standard; Maths, English &amp; Science.</p>
+      <a class="btn" href={LINKS.visit}>Get Applatch Kids &rarr;</a>
+      <div class="tag-row"><span>#quiztime</span><span>#unlocked</span><span>#funlearning</span></div>
     </div>
-    <div class="hero-shot"><img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" loading="lazy" /></div>
-  </div></section>
-
-
-
-  <!-- Try the quiz (interactive demo — supplements, doesn't replace, staging content) -->
-  <section class="trydemo"><div class="w two">
-    <div><h2 class="sec" style="margin-bottom:14px">Try it yourself</h2>
-    <p class="lead">Three quick questions, just like the real app. Score well and the locked apps unlock.</p></div>
-    <Quiz />
-  </div></section>
-
-  <!-- 2. Video -->
-  <section class="video"><div class="w">
-    <div class="vid" id="vid" data-id={YT}>
-      <img src={U + '2026/04/Hero-section-quiz-screen.png?fit=880%2C627&ssl=1'} alt="Applatch Kids quiz screen" width="880" height="627" loading="lazy" />
-      <button aria-label="Play video">▶</button>
+    <div class="hero-shot">
+      <div class="ring"></div>
+      <img src={U + '2026/04/Features-section-3.png?fit=1320%2C940&ssl=1'} alt="Quiz screen" loading="lazy" />
     </div>
   </div></section>
 
-  <!-- 3. Problems: stacked cards -->
-  <section class="probs"><div class="w">
-    <h2 class="sec">Did you know</h2>
-    <div class="stack">
-      {problems.map((p, i) => (
-        <article class="pcard" style={`--i:${i}`}>
-          <h3>{p.t}</h3><p>{p.b}</p>
+  <div class="w"><div class="strip">Age appropriate quizzes following National curriculum standard; Maths, English &amp; Science.</div></div>
+
+  <!-- Features -->
+  <section id="features"><div class="w">
+    <div class="sec-head"><span class="pill">Applatch Kids Features</span><h2>Our <em>interactive</em> features</h2></div>
+    <div class="feat-grid">
+      {features.map((f, i) => (
+        <article class="fcard">
+          <div>
+            <div class="ic">{i === 0 ? '🧩' : i === 1 ? '📊' : '⭐'}</div>
+            <h3>{f.t}</h3>
+          </div>
+          <p>{f.b}</p>
         </article>
       ))}
     </div>
   </div></section>
 
-  <!-- 4. Pinned scroll word -->
-  <section class="pin" id="pin"><div class="st"><div>
-    <h2 class="pinword">Learn <em>then</em> Play</h2>
-    <p id="pinp">Applatch Kids locks entertainment apps until a quiz is passed, so screen time turns into learning time.</p>
-  </div></div></section>
-
-  <!-- 5. Features -->
-  <section id="features" class="feats"><div class="w">
-    <p class="tag">Inside the app</p>
-    <h2 class="sec">Three ways it keeps them learning</h2>
-    {features.map((f) => (
-      <article class="feat">
-        <div class="ft">
-          <h3>{f.t}</h3><p>{f.b}</p>
-          {f.stores && <p class="row">
-            <a href={LINKS.ios}><img src={'https://applatch.com/applatchkids/wp-content/uploads/2022/02/appstore-dark.svg'} alt="Download on the App Store" height="44" /></a>
-            <a href={LINKS.android}><img src={'https://applatch.com/applatchkids/wp-content/uploads/2022/02/googleplay-dark.svg'} alt="Get it on Google Play" height="44" /></a>
-          </p>}
-          {f.cta && <p><a class="btn" href={LINKS[f.cta[1] as keyof typeof LINKS]}>{f.cta[0]}</a></p>}
-        </div>
-        <div class={`fi ${f.tall ? 'tall' : ''}`}><img src={U + f.img} alt={f.t} width={f.w} height={f.h} loading="lazy" /></div>
-      </article>
-    ))}
+  <!-- Did you know / stats -->
+  <section><div class="w">
+    <div class="stats">
+      <span class="pill" style="background:rgba(255,255,255,.15);color:#fff">Did you know?</span>
+      <h2>Screen time habits are shaping how kids learn today.</h2>
+      <div class="stat-row">
+        {problems.map((p) => <div class="stat"><b>{p.t}</b><p>{p.b}</p></div>)}
+      </div>
+    </div>
   </div></section>
 
-  <!-- 6. How it works -->
-  <section id="how-it-works" class="how"><div class="w">
-    <h2 class="sec">How it works</h2>
-    <p class="sub">Quiz score unlocks entertainment apps and children are kept safe online.</p>
-    <div class="cards">
-      {how.map((h) => (
-        <figure class="hc" tabindex="0">
-          <img src={U + h.img} alt="" loading="lazy" /><figcaption>{h.t}</figcaption>
+  <!-- Video / explainer -->
+  <section class="video-sec"><div class="w">
+    <div>
+      <span class="pill">Meet Loomey</span>
+      <h2>{video.title}</h2>
+      <p class="lead">{video.mascot} &mdash; {video.mascotSub} &mdash; hosted by {video.channel}.</p>
+      <a class="btn ghost" href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noopener">&blacktriangleright; Watch on YouTube</a>
+    </div>
+    <div class="vid-card" id="vid" data-id={video.youtubeId}>
+      <img src={U + '2026/04/Hero-section-quiz-screen.png?fit=880%2C627&ssl=1'} alt={video.mascot} loading="lazy" />
+      <div class="vid-mascot">{video.mascot}</div>
+      <button class="vid-play" aria-label="Play video">&#9654;</button>
+    </div>
+  </div></section>
+
+  <!-- How it works -->
+  <section id="how-it-works"><div class="w">
+    <div class="sec-head"><span class="pill">How it Works</span><h2>{how.heading}</h2></div>
+    <div class="how-grid">
+      {how.steps.map((h) => (
+        <figure class="hstep">
+          <span class="step">{h.step}</span>
+          <img src={U + h.img} alt="" loading="lazy" />
+          <figcaption>{h.t}</figcaption>
         </figure>
       ))}
     </div>
-  </div>
-  <div class="marq" aria-label="App screens"><div class="track">
-    {[...screens, ...screens].map((s) => <img src={U + s} alt="" width="328" loading="lazy" />)}
-  </div></div></section>
-
-  <!-- 7. Pricing -->
-  <section id="pricing" class="price"><div class="w">
-    <h2 class="sec">Our pricing works for everybody</h2>
-    <div class="tg"><button class="on" data-p="m">Per month</button><button data-p="y">Per year</button></div>
-    <div class="pc">
-      <div class="n" id="pn">{price.month}</div><p id="pl">per month</p>
-      <p class="save" id="ps" style="visibility:hidden">{price.save}</p>
-      <ul>{price.perks.map((p) => <li>{p}</li>)}</ul>
-      <a class="btn" href={LINKS.visit}>Get Applatch Kids</a>
-    </div>
   </div></section>
 
-  <!-- 8. FAQ -->
-  <section class="faq"><div class="w narrow">
-    <h2 class="sec">Any questions? Check out the FAQs</h2>
+  <!-- FAQ -->
+  <section class="faq"><div class="w" style="max-width:760px">
+    <div class="sec-head"><span class="pill">FAQs</span><h2>Any questions? Check out the FAQs</h2></div>
     {faqs.map(([q, a], i) => (
       <details open={i === 0}>
         <summary>{q}</summary>
         {a.split('\n\n').map((para) => <p>{para}</p>)}
       </details>
     ))}
-    <p>Still have unanswered questions? <a href="https://applatch.com/applatchkids/contacts-us/"><b>Contact us now</b></a></p>
+    <p style="margin-top:20px">Still have questions? <a href="https://applatch.com/applatchkids/contacts-us/"><b>Contact us now</b></a></p>
   </div></section>
 
-  <!-- 9. Blog -->
-  <section class="blog"><div class="w">
-    <h2 class="sec">Featured blog posts</h2>
-    <div class="posts">{posts.map((p) => <a href={p.href}><small>{p.d}</small><h3>{p.t}</h3></a>)}</div>
-    <p><a class="btn" href="https://applatch.com/applatchkids/blog/">View all posts</a></p>
+  <!-- Blog -->
+  <section><div class="w">
+    <div class="sec-head"><span class="pill">From the Blog</span><h2>Featured blog posts</h2></div>
+    <div class="blog-grid">{posts.map((p) => <a href={p.href}><small>{p.d}</small><h3>{p.t}</h3></a>)}</div>
+    <div class="marq" aria-label="More blog posts"><div class="track">
+      {[...postsMarquee, ...postsMarquee].map((p) => (
+        <a class="marq-card" href={p.href}><small>{p.d}</small><span>{p.t}</span></a>
+      ))}
+    </div></div>
   </div></section>
 
-  <!-- 10. Closing CTA + newsletter -->
-  <section class="w"><div class="cta">
+  <!-- Newsletter CTA -->
+  <div class="w" style="padding-bottom:90px"><div class="cta">
     <h2>Subscribe to our newsletter to stay informed about the latest updates</h2>
-    <p><a class="btn" href={LINKS.visit}>Get Applatch Kids</a></p>
+    <a class="btn" href={LINKS.visit}>Get Applatch Kids &rarr;</a>
     <form id="news"><input type="email" required placeholder="Your email address" aria-label="Email address" /><button class="btn">Subscribe</button></form>
-  </div></section>
+  </div></div>
 </Base>
 
 <script>
-  // Hero headline: letters start scattered, then gather (one page-load moment)
-  document.querySelectorAll<HTMLElement>('[data-scatter]').forEach((el) => {
-    const text = el.textContent || ''; el.setAttribute('aria-label', text); el.textContent = '';
-    text.split(' ').forEach((w) => {
-      const word = document.createElement('span'); word.className = 'wd';
-      [...w].forEach((c) => {
-        const l = document.createElement('span'); l.textContent = c; l.setAttribute('aria-hidden', 'true'); l.className = 'ch';
-        l.style.transform = `translate(${(Math.random() - .5) * 240}px,${(Math.random() - .5) * 200}px) rotate(${(Math.random() - .5) * 120}deg)`; l.style.opacity = '0';
-        word.appendChild(l);
-      });
-      el.appendChild(word); el.appendChild(document.createTextNode(' '));
-    });
-    requestAnimationFrame(() => el.querySelectorAll<HTMLElement>('.ch').forEach((l, i) => {
-      l.style.transition = `transform .9s cubic-bezier(.2,1.3,.4,1) ${i * 25}ms, opacity .5s ${i * 25}ms`;
-      l.style.transform = 'none'; l.style.opacity = '1';
-    }));
-  });
-  // Pinned word: letter-spacing tightens with scroll
-  const pin = document.getElementById('pin')!, word = pin.querySelector<HTMLElement>('.pinword')!;
-  const onScroll = () => {
-    const r = pin.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
-    word.style.letterSpacing = `${0.5 - 0.53 * Math.min(1, p * 1.6)}em`;
-    pin.style.setProperty('--o', String(Math.max(0, (p - 0.55) * 3)));
-  };
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  // Video facade: load YouTube only on click
   const v = document.getElementById('vid')!;
-  v.querySelector('button')!.onclick = () => {
-    v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.id}?autoplay=1" title="Applatch Kids video" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
-  };
-  // Pricing toggle
-  const $ = (id: string) => document.getElementById(id)!;
-  document.querySelectorAll<HTMLButtonElement>('.tg button').forEach((b) => (b.onclick = () => {
-    document.querySelectorAll('.tg button').forEach((x) => x.classList.remove('on')); b.classList.add('on');
-    const y = b.dataset.p === 'y';
-    $('pn').textContent = y ? '£39.99' : '£3.99'; $('pl').textContent = y ? 'per year' : 'per month'; $('ps').style.visibility = y ? 'visible' : 'hidden';
-  }));
-  // Newsletter: TODO connect to your email provider
-  $('news').onsubmit = (e) => { e.preventDefault(); $('news').innerHTML = '<b>Thanks! Check your inbox.</b>'; };
+  v.querySelector('button')!.addEventListener('click', () => {
+    v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.id}?autoplay=1" title="Applatch Kids explainer video" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  });
+  const news = document.getElementById('news')!;
+  news.addEventListener('submit', (e) => { e.preventDefault(); news.innerHTML = '<b>Thanks! Check your inbox.</b>'; });
 </script>
