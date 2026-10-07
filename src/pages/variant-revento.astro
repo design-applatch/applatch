@@ -1,0 +1,119 @@
+---
+// Design exploration only — lives on branch design/revento-layout, not linked from main nav.
+// Standalone page with isolated scoped styling (Bebas Neue + Inter).
+import '../styles/revento.css';
+import { U, LINKS, nav, features, video, how, faqs, posts, postsMarquee } from '../data';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Applatch Kids — layout exploration (Revento-inspired)</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="rv">
+
+  <header class="rv-nav"><div class="w">
+    <b>APPLATCH KIDS</b>
+    <nav>{nav.filter((n) => n.href.startsWith('http')).map((n) => <a href={n.href}>{n.label}</a>)}</nav>
+    <a class="rv-btn dark" href={LINKS.visit}>Get Applatch Kids →</a>
+  </div></header>
+
+  <section class="rv-hero"><div class="w">
+    <span class="doodle" style="top:30px;left:6%">✦</span>
+    <span class="doodle" style="top:80px;right:10%">+</span>
+    <span class="doodle" style="bottom:120px;left:12%">★</span>
+    <div class="badge"><span>Play this short quiz</span></div>
+    <h1>QUIZ SCORE<br /><span class="acc">UNLOCKS</span><br />ENTERTAINMENT APPS!</h1>
+    <p class="lead">Children love rewards! They gain access to locked apps for a set time when they pass their quizzes.</p>
+    <div class="cta-row"><a class="rv-btn" href={LINKS.visit}>Get Applatch Kids →</a></div>
+    <div class="rv-chips">
+      <div class="rv-curriculum">Age appropriate quizzes following National curriculum standard; Maths, English &amp; Science.</div>
+      <div class="rv-chip green"><b>15 Qs</b><small>Per quiz session</small></div>
+      <div class="rv-chip lime"><b>8/15</b><small>Score to unlock apps</small></div>
+    </div>
+    <div class="rv-hero-pad"></div>
+  </div></section>
+
+  <section id="features"><div class="w">
+    <div class="rv-feat-head">
+      <div><span class="rv-label">Applatch Kids Features</span><h2>Built to make<br />learning stick</h2></div>
+      <p>Three ways Applatch Kids turns screen time into learning time, built around short curriculum-based quizzes.</p>
+    </div>
+    <div class="rv-feat-grid">
+      {features.map((f) => (
+        <article class="rv-fcard">
+          <h3>{f.t}</h3>
+          <p>{f.b}</p>
+          <span class="rv-arrow">↗</span>
+        </article>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="rv-video"><div class="w">
+    <div class="rv-video-copy" style="grid-column:1/-1">
+      <span class="rv-label">Meet Loomey</span>
+      <h2>{video.title}</h2>
+      <p>{video.mascot} {video.mascotSub} — hosted by {video.channel}.</p>
+    </div>
+    <div class="rv-vchip purple"><b>15 Qs</b><small>Per quiz session</small></div>
+    <div class="rv-video-main" id="vid" data-id={video.youtubeId}>
+      <img src={U + '2026/04/Hero-section-quiz-screen.png?fit=880%2C627&ssl=1'} alt={video.mascot} loading="lazy" />
+      <button aria-label="Play video">▶</button>
+    </div>
+    <div class="rv-vchip coral"><b>8/15</b><small>Score to unlock apps</small></div>
+  </div></section>
+
+  <section class="rv-how" id="how-it-works"><div class="w">
+    <div class="rv-how-head"><span class="rv-label">How it Works</span><h2>{how.heading}</h2></div>
+    <div class="rv-steps">
+      {how.steps.map((h, i) => (
+        <div class="rv-step"><span class="num">{i + 1}</span><div><h3>{h.step}</h3><p>{h.t}</p></div></div>
+      ))}
+    </div>
+  </div></section>
+
+  <section><div class="w">
+    <div class="rv-how-head"><span class="rv-label">FAQs</span><h2>Any questions?</h2></div>
+    <div class="rv-faq">
+      {faqs.map(([q, a], i) => (
+        <details open={i === 0}><summary>{q}</summary><p>{a}</p></details>
+      ))}
+    </div>
+  </div></section>
+
+  <section><div class="w">
+    <div class="rv-how-head"><span class="rv-label">From the Blog</span><h2>Featured posts</h2></div>
+    <div class="rv-blog-grid">{posts.map((p) => <a href={p.href}><small>{p.d}</small><h3>{p.t}</h3></a>)}</div>
+    <div class="rv-marq"><div class="rv-track">
+      {[...postsMarquee, ...postsMarquee].map((p) => (
+        <a class="rv-mcard" href={p.href}><small>{p.d}</small><span>{p.t}</span></a>
+      ))}
+    </div></div>
+  </div></section>
+
+  <div class="w"><div class="rv-cta">
+    <h2>Subscribe to our newsletter to stay informed about the latest updates</h2>
+    <form id="news"><input type="email" required placeholder="Your email address" aria-label="Email address" /><button class="rv-btn dark">Subscribe</button></form>
+  </div></div>
+
+  <footer class="rv-foot">
+    <div class="w">
+      {nav.map((n) => <a href={n.href} style="margin:0 10px">{n.label}</a>)}
+      <div style="margin-top:14px">© Applatch. All rights reserved.</div>
+    </div>
+  </footer>
+
+<script>
+  const v = document.getElementById('vid')!;
+  v.querySelector('button')!.addEventListener('click', () => {
+    v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.id}?autoplay=1" title="Applatch Kids explainer video" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  });
+  const news = document.getElementById('news');
+  if (news) news.addEventListener('submit', (e) => { e.preventDefault(); news.innerHTML = '<b>Thanks! Check your inbox.</b>'; });
+</script>
+</body>
+</html>
